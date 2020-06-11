@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>Showing Show</title>
+    <style>
+        .container{
+            background: url(https://images.unsplash.com/photo-1586899028174-e7098604235b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80);
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+            height:970px;
+            font-family: 'Anton', sans-serif;
+        }
+        .info{
+            margin-left: 40%;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="info">
+        <h1>Show Information</h1>
+        <p> Show Title : {{show.title}} </p>
+        <p>Show ID: {{show.id}}</p>
+        <p>Show description: {{show.desc}} </p>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>Edit</title>
+</head>
+<style>
+    .container{
+        background:url(https://images.unsplash.com/photo-1543910556-bb42a926e975?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80);
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        height:970px;
+    }
+    .form{
+        font-family: 'Archivo Black', sans-serif;
+        margin-left: 40%;
+        padding: 20px;
+    }
+    input{
+        background: none;
+        margin: 5px;
+    }
+
+    .btn{
+        margin-left: 20%;
+        background: white;
+        width: 100px;
+    }
+    #desc{
+        width: 210px;
+        height: 100px;
+    }
+    #title{
+        width: 300px;
+    }
+    #network{
+        width: 230px;
+    }
+    #date{
+        width: 190px;
+    }
+    .error{
+        font-family: 'Archivo Black', sans-serif;
+        margin-left: 20%;
+
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="error">
+        {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+    <div class="form">
+    <form action="/process_edit/{{show_id}}" method="post">
+        {% csrf_token %}
+    <h1>Edit a Show</h1>
+    <label> New Title </label> 
+    <input type="text" name="title" id="title"><br>
+    <label> Updated Network </label> 
+    <input type="text" name="network" id="network"><br>
+    <label> Updated Release Date </label>
+    <input type="date" name="date" id="date"><br>
+    <label> Updated Description </label> 
+    <input type="text" name="desc" id="desc"><br>
+    <input type="submit" class="btn" value="Create"> <br>
+    </form>
+    
+</div>
+</div>
+</body>
+</html>
